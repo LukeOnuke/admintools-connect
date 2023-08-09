@@ -1,0 +1,14 @@
+name: admintools-connect
+version: '${project.version}'
+main: com.lukeonuke.admintoolsconnect.AdminToolsConnect
+api-version: '1.20'
+prefix: ATC
+authors: [lukeonuke]
+description: AdminTools Connect is a plugin that allows secure connections with the admin tools managment platform.
+website: https://admintools.app
+load: STARTUP
+commands:
+  atcregister:
+    description: Register server to ATC.
+    usage: /<command> <uuid>
+    permission: atc.register
