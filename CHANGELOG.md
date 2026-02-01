@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.0.0-SNAPSHOT]
 
 ### Added
 - **Folia Support**: Full compatibility with Folia's regionalized threading system
@@ -105,7 +105,7 @@ For users updating from 0.0.1-alpha:
 
 ---
 
-## [0.0.1-alpha] - 2023
+## [1.0.0] - 2023
 
 ### Added
 - Initial alpha release
@@ -114,6 +114,3 @@ For users updating from 0.0.1-alpha:
 - Remote command execution from AdminTools
 - Server UUID management
 - HTTP client for AdminTools API communication
-
-[Unreleased]: https://github.com/LukeOnuke/admintools-connect/compare/v0.0.1-alpha...HEAD
-[0.0.1-alpha]: https://github.com/LukeOnuke/admintools-connect/releases/tag/v0.0.1-alpha
