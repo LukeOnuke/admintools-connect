@@ -57,7 +57,7 @@ public class AdminToolsLogHandler extends Handler {
         String loggerName = record.getLoggerName();
         
         // Include logger name if available and not root
-        if (loggerName != null && !loggerName.isEmpty() && !loggerName.equals("")) {
+        if (loggerName != null && !loggerName.isEmpty()) {
             return String.format("[%s] [%s] %s", level, loggerName, message);
         }
         
