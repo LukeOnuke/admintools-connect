@@ -2,7 +2,6 @@ package com.lukeonuke.admintoolsconnect.services;
 
 import com.lukeonuke.admintoolsconnect.AdminToolsConnect;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

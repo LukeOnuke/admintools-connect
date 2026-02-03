@@ -1,0 +1,99 @@
+# AdminTools Connect Configuration
+# 
+# This file controls security and command validation settings for remote command execution
+
+security:
+  # Enable or disable command validation (default: true)
+  # Set to false to allow all commands without restrictions (NOT RECOMMENDED)
+  command-validation: true
+  
+  # Whitelist mode (default: false)
+  # false = Blacklist mode - allow all commands EXCEPT those in blocked-commands
+  # true = Whitelist mode - allow ONLY commands in allowed-commands
+  whitelist-mode: false
+  
+  # Global settings - applies to anyone with the global permission
+  global:
+    # Permission required for global command access
+    permission: atc.commands.global
+    
+    # Commands allowed in whitelist mode (ignored in blacklist mode unless whitelist-mode is true)
+    allowed-commands:
+      - help
+      - list
+      - tps
+      - version
+    
+    # Commands blocked at the global level (blacklist mode) - applies only to users with the global permission who don't match any player-specific or group rules
+    # Recommended: Keep critical server commands blocked
+    blocked-commands:
+      - stop
+      - restart
+      - reload
+      - op
+      - deop
+      - whitelist
+      - ban-ip
+      - pardon-ip
+  
+  # Group-based settings - higher priority than global
+  # Users with group permissions can execute group-specific commands
+  groups:
+    # Admin group example
+    admin:
+      permission: atc.commands.admin
+      allowed-commands:
+        - kick
+        - ban
+        - pardon
+        - gamemode
+        - teleport
+        - give
+        - clear
+        - difficulty
+        - weather
+        - time
+      blocked-commands:
+        - stop
+        - restart
+        - op
+        - deop
+    
+    # Moderator group example
+    moderator:
+      permission: atc.commands.moderator
+      allowed-commands:
+        - kick
+        - mute
+        - warn
+        - teleport
+      blocked-commands:
+        - ban
+        - pardon
+        - gamemode
+        - give
+        - op
+        - deop
+        - stop
+        - restart
+  
+  # Player-specific settings - highest priority
+  # These override both global and group settings
+  players:
+    # Example player configuration (remove or customize)
+    # exampleplayer:
+    #   permission: atc.commands.exampleplayer
+    #   allowed-commands:
+    #     - help
+    #     - list
+    #   blocked-commands:
+    #     - kick
+    #     - ban
+
+# How the priority system works:
+# 1. Player-specific settings (highest priority) - checked first
+# 2. Group settings (medium priority) - checked if no player-specific match
+# 3. Global settings (lowest priority) - fallback
+#
+# In whitelist-mode: Command must be in allowed-commands to execute
+# In blacklist-mode: Command must NOT be in blocked-commands to execute
