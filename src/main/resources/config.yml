@@ -24,7 +24,7 @@ security:
       - tps
       - version
     
-    # Commands blocked (blacklist mode) - these are ALWAYS blocked unless overridden by groups/players
+    # Commands blocked at the global level (blacklist mode) - applies only to users with the global permission who don't match any player-specific or group rules
     # Recommended: Keep critical server commands blocked
     blocked-commands:
       - stop
